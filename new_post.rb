@@ -3,10 +3,10 @@ require_relative 'link.rb'
 require_relative 'task.rb'
 require_relative 'memo.rb'
 
-puts 'Hi! i am your notepad.'
+puts 'Hi! i am your notepad. Version 2 + Sqlite'
 puts 'Your post?'
 
-choices = Post.post_types
+choices = Post.post_types.keys
 
 choice = -1
 
@@ -17,10 +17,10 @@ until choice >= 0 && choice < choices.size
   choice = gets.chomp.to_i
 end
 
-entry = Post.create(choice)
+entry = Post.create(choices[choice])
 
 entry.read_from_console
 
-entry.save
+id = entry.save_to_db
 
-puts ""
+puts "record saved, id = #{id}"
