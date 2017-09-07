@@ -2,6 +2,7 @@ require_relative 'post.rb'
 require_relative 'link.rb'
 require_relative 'task.rb'
 require_relative 'memo.rb'
+require_relative 'tweet.rb'
 
 puts 'Hi! i am your notepad. Version 2 + Sqlite'
 puts 'Your post?'
